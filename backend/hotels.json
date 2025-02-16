@@ -1,0 +1,104 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Tehran Grand Hotel",
+      "description": "A luxurious five-star hotel offering panoramic views of Tehran's skyline and excellent service.",
+      "location": {
+        "long": 51.3890,
+        "lat": 35.6892
+      },
+      "stars": 5
+    },
+    {
+      "id": 2,
+      "name": "Espinas Palace Hotel",
+      "description": "One of the top hotels in Tehran, known for its sophisticated design and world-class facilities.",
+      "location": {
+        "long": 51.3476,
+        "lat": 35.7572
+      },
+      "stars": 5
+    },
+    {
+      "id": 3,
+      "name": "Parsian Evin Hotel",
+      "description": "A five-star hotel offering a peaceful retreat in the heart of Tehran, with excellent amenities and dining options.",
+      "location": {
+        "long": 51.3361,
+        "lat": 35.7690
+      },
+      "stars": 5
+    },
+    {
+      "id": 4,
+      "name": "Kish Island International Hotel",
+      "description": "Located on the beautiful Kish Island, this hotel provides guests with luxury and comfort.",
+      "location": {
+        "long": 53.9642,
+        "lat": 26.5539
+      },
+      "stars": 5
+    },
+    {
+      "id": 5,
+      "name": "Laleh International Hotel",
+      "description": "Located in the central district of Tehran, the Laleh International Hotel is known for its excellent service and modern facilities.",
+      "location": {
+        "long": 51.4170,
+        "lat": 35.7235
+      },
+      "stars": 5
+    },
+    {
+      "id": 6,
+      "name": "Milad Tower Hotel",
+      "description": "Situated near the Milad Tower, this hotel offers spectacular views of the city and a wide range of amenities.",
+      "location": {
+        "long": 51.3105,
+        "lat": 35.7485
+      },
+      "stars": 5
+    },
+    {
+      "id": 7,
+      "name": "Simorgh Hotel",
+      "description": "A comfortable and luxurious hotel in Tehran, featuring a spa, restaurant, and top-tier service.",
+      "location": {
+        "long": 51.3870,
+        "lat": 35.7040
+      },
+      "stars": 4
+    },
+    {
+      "id": 8,
+      "name": "Tehran International Hotel",
+      "description": "An elegant hotel offering both business and leisure facilities, located in the heart of Tehran.",
+      "location": {
+        "long": 51.4157,
+        "lat": 35.7133
+      },
+      "stars": 4
+    },
+    {
+      "id": 9,
+      "name": "Hotel Markazi",
+      "description": "An affordable yet comfortable option for travelers visiting Tehran, with great access to local attractions.",
+      "location": {
+        "long": 51.4234,
+        "lat": 35.6851
+      },
+      "stars": 3
+    },
+    {
+      "id": 10,
+      "name": "Niloofar Hotel",
+      "description": "A family-friendly hotel offering great amenities, including a pool, restaurant, and conference rooms.",
+      "location": {
+        "long": 51.4092,
+        "lat": 35.6947
+      },
+      "stars": 3
+    }
+  ]
+}
