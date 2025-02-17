@@ -3,7 +3,6 @@ to execute the code run the commands bellow</p>
 
 ```bash
 pnpm install
-pnpm dev
+pnpm dev // runs both frontend and backend
 ```
 
-<br>
