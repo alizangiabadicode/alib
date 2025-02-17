@@ -1,33 +1,31 @@
 <script setup lang="ts">
-import TheSearchable from '~/components/TheSearchable.vue'
+import TheSearch from '~/components/TheSearch.vue'
 import { useHotelsDataProvider } from '~/composables/hotels'
-import { useMap } from '~/composables/map'
 
-const { initialize, setMarker } = useMap()
+const { getAllHotels, isHotelListLoaded } = useHotelsDataProvider()
 
-const { getAllHotels, refetch } = useHotelsDataProvider({
-  onSuccess,
-})
-
-function onSuccess() {
-  getAllHotels.value.forEach((hotel) => {
-    setMarker({
+const getConvertedHotelsToMarkers = computed(() => {
+  return getAllHotels.value.map((hotel) => {
+    return {
       id: hotel.id,
+      title: hotel.name,
       lat: hotel.location.lat,
       lng: hotel.location.long,
-      title: hotel.name,
-    }, () => {})
+    }
+  })
+})
+
+const router = useRouter()
+function onClickMarker(id: number) {
+  router.push({
+    path: `/hotels/${id.toString()}`,
   })
 }
-onMounted(() => {
-  initialize()
-  refetch()
-})
 </script>
 
 <template>
-  <div id="mapCanvas" class="isolate h-screen" />
-  <HotelSearch />
+  <TheMap v-if="isHotelListLoaded" :markers="getConvertedHotelsToMarkers" @marker-clicked="onClickMarker" />
+  <TheSearch />
 </template>
 
 <route lang="yaml">

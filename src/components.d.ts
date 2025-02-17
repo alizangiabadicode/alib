@@ -7,13 +7,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    HotelSearch: typeof import('./components/hotels/HotelSearch.vue')['default']
+    HotelSearch: typeof import('./components/HotelSearch.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCounter: typeof import('./components/TheCounter.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     TheInput: typeof import('./components/TheInput.vue')['default']
+    TheMap: typeof import('./components/TheMap.vue')['default']
+    TheSearch: typeof import('./components/TheSearch.vue')['default']
     TheSearchable: typeof import('./components/TheSearchable.vue')['default']
+    TheSearchableInput: typeof import('./components/TheSearchableInput.vue')['default']
+    TheSearchInput: typeof import('./components/TheSearchInput.vue')['default']
   }
 }

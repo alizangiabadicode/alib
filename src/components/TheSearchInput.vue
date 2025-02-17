@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { IProps } from '~/models/components/ُTheSearchable'
 import {
   Listbox,
   ListboxButton,
@@ -6,14 +7,6 @@ import {
   ListboxOptions,
 } from '@headlessui/vue'
 
-interface IOptions {
-  id: number
-  name: string
-}
-interface IProps {
-  options: Array<IOptions>
-  modelValue: IOptions | null
-}
 defineProps<IProps>()
 const searchModel = defineModel('search', {
   default: '',
@@ -36,14 +29,14 @@ const searchModel = defineModel('search', {
         :disabled="true"
       >
         <div>
-          <TheInput v-model="searchModel" />
+          <TheInput v-model="searchModel" class="text-gray-800" />
         </div>
       </ListboxOption>
       <ListboxOption
         v-for="option in options"
         :key="option.id"
         :value="option"
-        class="cursor-pointer px-4 py-2 disabled:cursor-not-allowed hover:bg-gray-100 disabled:text-gray-400"
+        class="cursor-pointer px-4 py-2 text-gray-800 disabled:cursor-not-allowed hover:bg-gray-100 disabled:text-gray-400"
       >
         <slot :name="`option-${option.id}`">
           {{ option.name }}

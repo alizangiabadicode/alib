@@ -1,5 +1,11 @@
-declare interface Window {
-  // extend the window
+import type { Mapp, MappOptions } from './models/map'
+
+// global.d.ts
+
+declare global {
+  interface Window {
+    Mapp: new (options: MappOptions) => Mapp // Add the Mapp type to globalThis
+  }
 }
 
 // with unplugin-vue-markdown, markdown files can be treated as Vue components

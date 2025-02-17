@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import TheSearchable from '../TheSearchable.vue'
+import type { IOptions } from '~/models/components/ُTheSearchable'
+import TheSearchInput from './TheSearchInput.vue'
 
 const textSearch = ref('')
 const txtSearchDebounced = refDebounced(textSearch, 500)
-const { getAllHotels } = useHotelsDataProvider({
-  enabled: true,
-}, computed(() => {
+const { getAllHotels, getHotel } = useHotelsDataProvider(computed(() => {
   return {
     q: txtSearchDebounced.value,
   }
 }))
+const { zoomTo } = useMap()
 const getSearchableOptions = computed(() => {
   return getAllHotels.value.map((hotel) => {
     return {
@@ -20,12 +20,20 @@ const getSearchableOptions = computed(() => {
   })
 })
 
-const selectedHotel = ref()
+const selectedHotel = ref<IOptions | null>(null)
+watch(selectedHotel, (h) => {
+  if (h) {
+    const hotel = getHotel(h.id)
+    if (hotel) {
+      zoomTo(hotel.id)
+    }
+  }
+})
 </script>
 
 <template>
   <div class="absolute top-10 w-full flex justify-center">
-    <TheSearchable v-model="selectedHotel" v-model:search="textSearch" :options="getSearchableOptions" class="max-w-80">
+    <TheSearchInput v-model="selectedHotel" v-model:search="textSearch" :options="getSearchableOptions" class="max-w-80">
       <template v-for="option in getSearchableOptions" :key="`option-${option.id}`" #[`option-${option.id}`]>
         <div class="font-bold">
           {{ option.name }}
@@ -34,6 +42,6 @@ const selectedHotel = ref()
           {{ option.desc }}
         </div>
       </template>
-    </TheSearchable>
+    </TheSearchInput>
   </div>
 </template>
